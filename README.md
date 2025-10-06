@@ -4,7 +4,12 @@ Neovim plugin that handles filetype, lsp ([taskr_ls](https://github.com/taskrfil
 ## Installation
 With [folke/lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
-{ 'taskrfile/taskrfile.nvim' }
+{
+    'taskrfile/taskrfile.nvim',
+    config = function ()
+        require('taskr').setup()
+    end
+}
 ```
 
 ## Highlighting
