@@ -12,8 +12,8 @@ With [folke/lazy.nvim](https://github.com/folke/lazy.nvim):
 }
 ```
 
-## Highlighting
-For highlighting to work, make sure to install the tree-sitter parser. This can be done like this:
+## Treesitter
+To enable treesitter support for `taskr`, you can add the following Lua snippet to your [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) configuration.
 ```lua
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 
@@ -29,4 +29,13 @@ parser_config.taskr = {
 local ensureInstalled = {
     "taskr",
 }
+
+local config = require("nvim-treesitter.configs")
+config.setup({
+    auto_install = true,
+    ensure_installed = ensureInstalled,
+    highlight = { enable = true },
+    indent = { enable = true },
+})
+
 ```
